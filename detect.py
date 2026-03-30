@@ -14,6 +14,7 @@ print(f"Conexão estabelecida com {addr}")
 
 # 1. Carrega o seu modelo
 model = YOLO("exp.pt")
+# model = YOLO("exp-2.pt")
 
 # 2. Abre a conexão com a webcam (0 é a padrão)
 cap = cv2.VideoCapture(0)
