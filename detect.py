@@ -35,12 +35,12 @@ while cap.isOpened():
 
 
         for result in results:
-            for box in result.boxes:
+            for i, box in enumerate(result.boxes):
                 x1, y1, x2, y2 = map(int, box.xyxy[0])
                 confidence = float(box.conf[0])
                 class_id = int(box.cls[0])
-                print(f"Detecção: Classe {class_id}, Confiança {confidence:.2f}, Caixa ({x1}, {y1}, {x2}, {y2})")
-                msg = f"{x1}, {y1}, {x2}, {y2}\n"
+                #print(f"Detecção: Classe {class_id}, Confiança {confidence:.2f}, Caixa ({x1}, {y1}, {x2}, {y2})")
+                msg = f"{i}, {x1}, {y1}, {x2}, {y2}, {confidence:.2f}, {class_id}\n"
 
                 conn.send(msg.encode("utf-8"))
 

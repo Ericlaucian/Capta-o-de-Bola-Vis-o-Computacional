@@ -36,5 +36,5 @@ public class PythonConnection {
             throw e;
         }
     }
-    
+
 }
